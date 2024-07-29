@@ -1,0 +1,70 @@
+.footer-page{
+    position: absolute;
+    top:810vh;
+    width: 100%;
+    height: 75vh;
+    background-color: black;
+}
+
+.footer-section{
+    
+    width: 100%;
+    height: 60vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.footer-section div{
+    color: white;
+    height: 90%;
+    padding-left: 100px;
+    padding-top: 50px;
+}
+
+.footer-section div p{
+    margin-bottom: 30px;
+}
+
+.follow-us-section{
+    color: white;
+}
+
+.follow-us-section h1{
+    font-size: 30px;
+}
+
+.follow-us-section p{
+    padding-top: 50px;
+}
+
+.svg-follow-icons{
+    margin-top: 25px;
+    width: 70%;
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.links-footer{
+    margin-top: 25px;
+}
+
+.horizontal-line-footer-section{
+    margin-top: 0px;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+}
+
+footer{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p{
+    margin-top: 40px;
+    margin-left: 100px;
+}

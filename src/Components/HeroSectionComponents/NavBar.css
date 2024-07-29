@@ -1,0 +1,37 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: none;
+    color: white;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .navbar-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 100px;
+  }
+  
+  .navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 5rem;
+    margin-right: 100px;
+  }
+  
+  .navbar-links li {
+    display: inline;
+  }
+  
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .navbar-links a:hover {
+    font-weight: 600;
+  }
+  

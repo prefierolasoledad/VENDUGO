@@ -1,0 +1,50 @@
+.part-two{
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    top: 450vh;
+    z-index: 20;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    overflow: hidden;
+} 
+  .image-section {
+    width: 500px;
+    height: 90%;
+    animation: rotateZ 4s linear infinite, moveLeft 10s linear infinite;
+  }
+
+  #first{
+    background-image: url(../../../public/Images/first.png);
+    background-size: cover;
+    animation: rotateZ 4s linear infinite, moveLeft 10s linear infinite;
+  }
+
+  #second{
+    background-image: url(../../../public/Images/second.png);
+    background-size: cover;
+  }
+
+  #third{
+    background-image: url(../../../public/Images/third.png);
+    background-size: cover;
+  }
+
+  @keyframes rotateZ {
+    from {
+      transform: rotateZ(0deg);
+    }
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
+  
+  @keyframes moveLeft {
+    0% {
+      transform: translateX(50%);
+    }
+    100% {
+      transform: translateX(-60%);
+    }
+  }
