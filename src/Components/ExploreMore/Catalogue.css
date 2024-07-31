@@ -1,0 +1,198 @@
+.catalogue-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.catalogue-section h1{
+    font-size: 30px;
+    color: white;
+}
+
+.catalogue{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px; 
+    width: 90%;
+}
+
+.car-catalogue{
+    height:400px;
+    width: 22.57%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-top: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imageSectionofCar{
+    width: 100%;
+    height: 75%;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid black;
+}
+
+.imageSectionofCar img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+
+.car-catalogue h2{
+    margin: 13px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight:500;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+
+.exploreButtonforCatalogue{
+    margin-top: -5px;
+    background-color: black;
+    color:white;
+    font-size: 17px;
+    border: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+}
+
+.exploreButtonforCatalogue:hover{
+    cursor: pointer;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-top: 100px;
+  }
+  
+.page-info {
+    margin-right: 10px;
+}
+  
+.prev[aria-disabled="true"] {
+    color: grey;
+    pointer-events: none;
+}
+
+.next[aria-disabled="true"] {
+    color: grey;
+    pointer-events: none;
+}
+
+.next:hover{
+    cursor: pointer;
+}
+.prev:hover{
+    cursor:pointer;
+}
+
+.popup-background-box-for-renting-car{
+    position: fixed;
+    top:0;
+    z-index: 1000;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.481);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pop-up-for-renting-card{
+    height: 435px;
+    width:50%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.close-ppup-window{
+    float: right;
+    margin-right: 20px;
+    font-size: 30px;
+    margin-top: 10px;
+    color:white;
+}
+
+.close-ppup-window:hover{
+    cursor: pointer;
+}
+
+.pop-up-for-renting-car-cover{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.493);
+    border-radius: 20px;
+}
+
+.content-for-renting{
+    width: 100%;
+    height: 90%;
+    background-color: none;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    color: white;
+}
+
+.content-for-renting aside{
+    width: 70%;
+}
+
+.content-for-renting h1{
+    margin-top: -20px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    color: rgb(255, 162, 0);
+    text-shadow: 1px 3px 2px rgb(0, 0, 0);
+}
+
+.make-payment-button{
+    border: none;
+    background-color: orangered;
+    color: white;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    font-size: 22px;
+}
+
+#benifits-for-car{
+    margin-bottom: 40px;
+}
+
+#price-for-renting-car{
+    text-shadow: 5px 5px 5px rgb(0, 0, 0);
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+#rating{
+    text-shadow: 5px 5px 5px rgb(0, 0, 0);
+    font-size: 18px;
+}

@@ -28,6 +28,30 @@
     justify-content: center;
 }
 
+#slideOne{
+    background-image: url('../../../public/Images/slideShowPagefour/slideOne.png');
+    background-size:cover;
+    background-position: center;
+}
+
+#slideTwo{
+  background-image: url('../../../public/Images/slideShowPagefour/slideTwo.png');
+  background-size:cover;
+  background-position: center;
+}
+
+#slideThree{
+  background-image: url('../../../public/Images/slideShowPagefour/slideThree.png');
+  background-size:cover;
+  background-position: center;
+}
+
+#slideFour{
+  background-image: url('../../../public/Images/slideShowPagefour/slideFour.png');
+  background-size:cover;
+  background-position: center;
+}
+
 .dots-horizontal{
     margin-top: 40%;
     display: flex;
@@ -44,7 +68,7 @@
     margin-bottom: 20px;
   }
 
-  .dot-active-horizontal{
+  #dot-active-horizontal{
     width: 4px;
     height: 4px;
     border: 2px solid rgb(255, 255, 255);

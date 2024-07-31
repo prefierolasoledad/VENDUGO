@@ -1,14 +1,22 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import './NavBar.css';
 
 const NavBar= () =>{
+
+    const navigate = useNavigate();
+
+    const handelClickExploreMore= async ()=>{
+        navigate(`/ExploreMore`);
+    }
+
     return (
         <nav className="navbar">
             <div className="navbar-title">VENDUGO</div>
             <ul className="navbar-links">
-                <li><a href="#contact">Contact Us</a></li>
-                <li><a href="#services">Our Services</a></li>
-                <li><a href="#products">Our Product</a></li>
+                <li><p>Contact Us</p></li>
+                <li onClick={()=>{handelClickExploreMore()}}><p>Our Services</p></li>
+                <li onClick={()=>{handelClickExploreMore()}}><p>Our Product</p></li>
             </ul>
         </nav>
     )

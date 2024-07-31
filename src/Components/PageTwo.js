@@ -25,7 +25,7 @@ const PageTwo=()=>{
             <PartTwo/>
             <PartThree/>
             <PartFour/>
-            <Footer/>
+            <Footer alterMargin={false}/>
         </section>
     )
 }

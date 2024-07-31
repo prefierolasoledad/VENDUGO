@@ -1,9 +1,9 @@
 import React from "react";
 import './Footer.css';
 
-const Footer=()=>{
+const Footer=({alterMargin})=>{
     return(
-        <section className="footer-page">
+        <section style={{position:(alterMargin)?'relative':'absolute', top:(alterMargin)?'100px':'810vh'}} className="footer-page">
             <div className="footer-section">
                 <div className="follow-us-section">
                     <h1>BEDLAM INC.</h1>
@@ -48,9 +48,9 @@ const Footer=()=>{
             <footer>
                 <p>@BEDLAMS TM, ALL RIGHTS RESERVED</p>
                 <ul className="navbar-links">
-                <li><a href="#contact">COOKIE POLICY</a></li>
-                <li><a href="#services">LEGAL NOTICE</a></li>
-                <li><a href="#products">COOKIE CONSENT OPTIONS</a></li>
+                <li><p>COOKIE POLICY</p></li>
+                <li><p>LEGAL NOTICE</p></li>
+                <li><p>COOKIE CONSENT OPTIONS</p></li>
             </ul>
             </footer>
         </section>
