@@ -35,4 +35,34 @@
     font-weight: 600;
     cursor: pointer;
   }
+
+  @media (max-width:1030px) {
+    .navbar-title {
+      margin-left: 70px;
+    }
+    .navbar-links{
+      gap: 3rem;
+      margin-right: 70px;
+    }
+    @media (max-width:770px) {
+      .navbar{
+        padding: 0rem;
+      }
+      .navbar-title{
+        margin-left: 30px;
+      }
+      .navbar-links{
+        gap: 2rem;
+        margin-right: 30px;
+      }
+      @media (max-width:600px){
+        .navbar-title{
+          margin-top: 20px;
+        }
+        .navbar-links{
+          display: none;
+        }
+      }     
+    }
+  }
   

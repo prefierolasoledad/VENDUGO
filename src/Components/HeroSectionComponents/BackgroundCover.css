@@ -1,88 +1,200 @@
 .background-fill{
-    position: absolute;
-    top:0;
-    width: 100%;
-    height:100vh;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.371);
-    display: flex;
-    align-items: center;
+  position: absolute;
+  top:0;
+  width: 100%;
+  height:100vh;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.371);
+  display: flex;
+  align-items: center;
 }
 
-.background-fill-heading{
-    margin-left: 100px;
-    width: 520px;
-    color: white;
+.background-fill-heading{ 
+  margin-left: 100px;
+  width: 520px;
+  color: white;
 }
 
 
 .background-fill-heading h1{
-    font-size: 40px;
+  font-size: 40px;
 }
 
 .background-fill-heading p{
-    margin-top: -20px;
-    font-size: 14px;
+  margin-top: -20px;
+  font-size: 14px;
 }
 
 
 .background-fill-heading button{
-    border: none;
-    margin-top: 60px;
-    padding: 20px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    background-color: orange;
-    color:white;
-    border-radius: 10px;
+  border: none;
+  margin-top: 60px;
+  padding: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: orange;
+  color:white;
+  border-radius: 10px;
 }
 
 .background-fill-heading button:hover{
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .background-naming {
-    width:27%; 
-    height: 300px;
-    margin-top: 170px;
-    margin-left: 25%;
+  width:27%; 
+  height: 300px;
+  margin-top: 170px;
+  margin-left: 25%;
+  margin-right: 100px;
+}
 
-  }
-
-  .dots{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+.dots{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
   
-  .dot {
-    margin-left: 100%;
-    width: 4px;
-    height: 4px;
-    border: 2px solid white;
-    border-radius: 50%;
-    margin-bottom: 20px;
-  }
+.dot {
+  margin-left: 100%;
+  width: 4px;
+  height: 4px;
+  border: 2px solid white;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
 
-  #dot-active{
-    margin-left: 100%;
-    width: 4px;
-    height: 4px;
-    border: 2px solid orange;
-    background-color: orange;
-    border-radius: 50%;
-    margin-bottom: 20px;
-  }
+#dot-active{
+  margin-left: 100%;
+  width: 4px;
+  height: 4px;
+  border: 2px solid orange;
+  background-color: orange;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
 
-  .horizontal-bar{
-    width: 102%;
-    height: 3px;
-    background-color: orange;
-    margin-top: 160px;
-  }
+.horizontal-bar{
+  width: 102%;
+  height: 3px;
+  background-color: orange;
+  margin-top: 160px;
+}
 
-  .background-naming p{
-    color: white;
-    float: right;
+.background-naming p{
+  color: white;
+  float: right;
+}
+
+@media (max-width:1255px){
+  .background-naming{
+    margin-left: 20%;
   }
-  
+  @media (max-width:1145px) {
+    .background-naming{
+      margin-left: 15%;
+    }
+  }
+  @media (max-width:1052px){
+    .background-naming{
+      margin-right: 70px;
+      margin-left: 10%;
+    }
+    .background-fill-heading{
+      margin-left: 70px;
+    }
+    @media (max-width:890px){
+      .background-naming{
+        margin-left: 0%;
+      }
+    }
+    @media (max-width:770px) {
+      .background-fill-heading{
+        margin-left: 30px;
+      }
+      .background-naming{
+        margin-right: 30px;
+      }
+      .horizontal-bar{
+        width: 125%;
+        margin-right: 30px;
+        margin-left: -20%;
+      }
+      .background-naming p{
+        margin-left: -50px;
+      }
+      @media (max-width:696px) {
+        .background-fill-heading h1{
+          font-size: 35px;
+        }
+        .background-fill-heading p{
+          font-size: 12px;
+        }
+        .background-fill-heading button{
+          padding: 10px;
+        }
+        .background-naming p{
+          font-size: 12px;
+        }
+        @media (max-width:570px) {
+          .background-fill-heading h1{
+            font-size: 30px;
+          }
+          .background-fill-heading p{
+            font-size: 10px;
+          }
+          .background-naming p{
+            font-size: 10px;
+          }
+          .background-fill-heading button{
+            font-size: 10px;
+          }
+        }
+        @media (max-width:500px) {
+          .horizontal-bar{
+            width: 240%;
+            margin-left: -130%;
+          }
+          .background-fill-heading h1{
+            font-size: 25px;
+          }
+          .background-naming p{
+            margin-left: -200px;
+          }
+          @media (max-width:400px){
+            .background-naming {
+              width:1%; 
+            
+            }
+            .background-fill-heading{
+              padding-right: 40px;
+            }
+            .background-fill-heading h1{
+              font-size:24px;
+            }
+            .horizontal-bar{
+              width: 200px;
+              margin-left: -190px;
+            }
+            @media (max-width:368px) {
+              .background-fill-heading{
+                padding-right: 50px;
+              }
+              .background-fill-heading h1{
+                font-size: 20px;
+              }
+              .background-fill-heading p{
+                font-size: 8px;
+              }
+              @media (max-width:338px) {
+                .background-fill-heading h1{
+                  font-size: 18px;
+                }                
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -2,8 +2,9 @@ import React from "react";
 import './Footer.css';
 
 const Footer=({alterMargin})=>{
+    const screenWidth=window.innerWidth;
     return(
-        <section style={{position:(alterMargin)?'relative':'absolute', top:(alterMargin)?'100px':'810vh'}} className="footer-page">
+        <section style={{position:(alterMargin)?'relative':'absolute', top:(alterMargin)?'100px':(screenWidth<1109)?(screenWidth<779)?(screenWidth<704)?(screenWidth<424)?'690vh':'790vh':'740vh':'890vh':'810vh'}} className="footer-page">
             <div className="footer-section">
                 <div className="follow-us-section">
                     <h1>BEDLAM INC.</h1>

@@ -5,8 +5,8 @@
     top: 450vh;
     z-index: 20;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px;
     overflow: hidden;
 } 
   .image-section {
@@ -18,17 +18,20 @@
   #first{
     background-image: url(../../../public/Images/first.png);
     background-size: cover;
+    background-position: center;
     animation: rotateZ 4s linear infinite, moveLeft 10s linear infinite;
   }
 
   #second{
     background-image: url(../../../public/Images/second.png);
     background-size: cover;
+    background-position: center;
   }
 
   #third{
     background-image: url(../../../public/Images/third.png);
     background-size: cover;
+    background-position: center;
   }
 
   @keyframes rotateZ {
@@ -48,3 +51,57 @@
       transform: translateX(-60%);
     }
   }
+
+@media (max-width:1100px) {
+  .part-two{
+    top: 500vh;
+  }
+  @keyframes moveLeft {
+    0% {
+      transform: translateX(50%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @media (max-width:780px) {
+    .part-two{
+      top:380vh;
+    }
+    @keyframes moveLeft {
+      0% {
+        transform: translateX(50%);
+      }
+      100% {
+        transform: translateX(-150%);
+      }
+    }
+  }
+  @media (max-width:705px) {
+    .part-two{
+      top: 450vh;
+    }
+    @keyframes moveLeft {
+      0% {
+        transform: translateX(50%);
+      }
+      100% {
+        transform: translateX(-180%);
+      }
+    }
+    @media (max-width:441px) {
+      .part-two{
+        top: 355vh;
+      }
+      @keyframes moveLeft {
+        0% {
+          transform: translateX(50%);
+        }
+        100% {
+          transform: translateX(-220%);
+        }
+      }
+    }
+  }
+
+}

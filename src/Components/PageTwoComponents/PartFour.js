@@ -1,7 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import './PartFour.css';
 
 const PartFour=()=>{
+    const navigate=useNavigate();
+
+    const exploreMore=async()=>{
+        navigate('/ExploreMore');
+    }
     return(
         <section className="part-four">
             <div className="part-four-one">
@@ -25,7 +31,7 @@ const PartFour=()=>{
 
                 </div>
             </div>
-            <button>EXPLORE MORE</button>
+            <button onClick={()=>{exploreMore()}}>EXPLORE MORE</button>
         </section>
     )
 }

@@ -1,11 +1,10 @@
 .footer-page{
     width: 100%;
-    height: 75vh;
+    height: 76vh;
     background-color: black;
 }
 
 .footer-section{
-    
     width: 100%;
     height: 60vh;
     display: grid;
@@ -16,7 +15,6 @@
 .footer-section div{
     color: white;
     height: 90%;
-    padding-left: 100px;
     padding-top: 50px;
 }
 
@@ -25,6 +23,10 @@
 }
 
 .follow-us-section{
+    display: none;
+    display: block;
+    padding-left: 100px;
+    width: 200px;
     color: white;
 }
 
@@ -38,7 +40,7 @@
 
 .svg-follow-icons{
     margin-top: 25px;
-    width: 70%;
+    width: 120px;
     height: 50px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -46,6 +48,10 @@
 
 .links-footer{
     margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 .horizontal-line-footer-section{
@@ -60,6 +66,8 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: black;
+    
 }
 
 footer p{
@@ -69,5 +77,61 @@ footer p{
   
 .navbar-links p {
     margin-left: 0px;
+}
+
+@media (max-width:1100px) {
+    .horizontal-line-footer-section{
+        margin-top: 40px;
+    }
+    footer p{
+        margin-left: 70px;
+        font-size: 14px;
+    }
+    @media (max-width:769px) {
+        .footer-page{
+            height: 133vh;
+        }
+        .follow-us-section{
+            padding-left: 70px;
+            width: 200px;
+        }
+        .footer-section{
+            grid-template-columns: repeat(2, 1fr);
+            gap:0px
+        }
+        .horizontal-line-footer-section{
+            margin-top: 400px;
+        }
+        footer{
+            margin-top: 5px;
+            height: 0px;
+        }
+        footer p{
+            margin-left: 30px;
+            font-size: 10px;
+            height: 0px;
+        }
+        @media (max-width:425px) {
+            .follow-us-section{
+                padding-left: 30px;
+                width: 160px;
+            }
+            .follow-us-section h1{
+                font-size: 25px;
+            }
+            .links-footer p{
+                font-size: 14px;
+            }
+            footer{
+                display: flex;
+                align-items: center;
+            }
+            @media (max-width:375px) {
+                .links-footer p{
+                    font-size: 10px;
+                }
+            }
+        }
+    }
 }
 

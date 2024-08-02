@@ -1,7 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import './PartOne.css'
 
 const PartOne=()=>{
+    const navigate=useNavigate();
+
+    const exploreMore=async()=>{
+        navigate(`/ExploreMore`);
+    }
     return(
         <section className="part-one">
             <div className="part-one-one">
@@ -48,7 +54,7 @@ const PartOne=()=>{
                     <p>
                         WE PROVIDE OFFROAD CAR TO RENT FOR YOUR TRIP. IT CAN BE USEFUL IN ANY CIRCUMSTANCES YOU WILL HAVE, FROM DRIVING ON THE ASPHALT
                     </p>
-                    <button>SEE CATALOGUE</button>
+                    <button onClick={()=>{exploreMore()}}>SEE CATALOGUE</button>
                 </aside>
             </div>
             

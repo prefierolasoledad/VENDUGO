@@ -25,6 +25,7 @@ const BackgroundCover=({name})=>{
                     <span id={(name==="TOYOTA_FORTUNER_LEGENDER")?"dot-active":""} className="dot"></span>
                 </div>
                 <div className="horizontal-bar"></div>
+                
                 <p>{name.replace(/_/g, ' ')}</p>
             </aside>
         </section>

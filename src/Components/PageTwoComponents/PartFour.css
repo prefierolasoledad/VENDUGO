@@ -19,20 +19,16 @@
     justify-content: space-between;
 }
 
-/* .part-four-one aside{
-    width: 49%;
-} */
-
 .part-four-left{
     font-size: 25px;
-    width: 40%;
+    width: 510px;
     color:rgb(255, 149, 0);
 }
 
 .part-four-right{
     margin-top: -50px;
     margin-left: 0%;
-    width: 50%;
+    width: 635px;
     color: white;
 }
 
@@ -47,17 +43,18 @@
 
 .image-section-part-four div{
     width: 49%;
-    background-color: blueviolet;
 }
 
 #part-four-first-image{
     background-image: url('../../../public/Images/PartFourOne.png');
     background-size: cover;
+    background-position: center;
 }
 
 #part-four-second-image{
     background-image: url('../../../public/Images/PartFourTwo.png');
     background-size: cover;
+    background-position: center;
 }
 
 .part-four button{
@@ -75,3 +72,112 @@
 .part-four button:hover{
     cursor: pointer;
 }
+
+
+
+.part-four{
+    position: absolute;
+    z-index: 20;
+    width: 100%;
+    height: 130%;
+    top: 665vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width:1265px) {
+    .part-four-left{
+        font-size: 20px;
+        width: 410px;
+    }
+    
+    .part-four-right{
+        width: 535px;
+    }
+    @media (max-width:1110px) {
+        .part-four{
+            top: 725vh;
+        }
+        .part-four-left{
+            font-size: 17px;
+            width: 340px;
+        }
+        
+        .part-four-right{
+            font-size: 14px;
+            width: 470px;
+        }
+        @media (max-width:915px) {
+            .part-four-left{
+                font-size: 14px;
+                width: 280px;
+            }
+            
+            .part-four-right{
+                margin-top: -10px;
+                font-size: 12px;
+                width: 390px;
+            }
+            @media (max-width:781px) {
+                .part-four{
+                    top:585vh;
+                }
+                @media (max-width:705px) {
+                    .part-four{
+                        height: 200%;
+                    }
+                    .part-four-one{
+                        margin-top: 200px;
+                        height: 900px;
+                        flex-direction: column;
+                        justify-content: space-evenly;
+                    }
+                    .part-four-left{
+                        font-size: 20px;
+                        width: 400px;
+                    }
+                    .part-four-right{
+                        font-size: 15px;
+                        width: 400px;
+                    }
+                    .image-section-part-four{
+                        margin-top: 0px;
+                        height: 140%;
+                        flex-direction: column;
+                        justify-content: space-evenly;
+                        align-items: center;
+                    }
+                    .image-section-part-four div{
+                        width: 100%;
+                        height: 40%;
+                    }
+                    .part-four button{
+                        margin-top: -10px;
+                    }
+                    @media (max-width:425px) {
+                        .part-four{
+                            top:475vh;
+                        }
+                        .part-four-left{
+                            margin-left: 30px;
+                            font-size: 16px;
+                            width: 300px;
+                        }
+                        .part-four-right{
+                            margin-top: -110px;
+                            font-size: 12px;
+                            width: 300px;
+                        }
+                        .image-section-part-four{
+                            margin-top: -100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
