@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Select from 'react-select';
 import HondaAccord from '../../CarsCollection/HondaAccord.png';
@@ -17,6 +17,7 @@ const Catalogue=()=>{
     const [showPopUpForRentingCar,setShowPopUpForRentingCar]=useState(false);
     const [selectedCarName,setSelectedCarName]=useState('');
     const [selectedCarImage,setSelectedCarImage]=useState('');
+    const [width, setWidth]=useState(window.innerWidth);
 
     const catalogue=[
         {id:"HondaAccord", imageUrl:HondaAccord, name:"Honda Accord"},
@@ -51,6 +52,18 @@ const Catalogue=()=>{
         setShowPopUpForRentingCar(!showPopUpForRentingCar);
     }
 
+    useEffect(() => {
+        const handleResize = () => setWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const getWidth = () => {
+        if (width > 1200) return '500px';
+        if (width > 768) return '400px';
+        return '300px';
+    };
+
     const navigate=useNavigate();
 
     const goToPageTwo= async ()=>{
@@ -60,14 +73,18 @@ const Catalogue=()=>{
     return(
         <section className="catalogue-section">
             <h1>CAR CATALOGUE</h1>
-            <div className='inputCountry' style={{ width: '500px' }}>
             <Select 
                 placeholder="Select Car"
                 value={selectedCar}
                 onChange={handleCarChange}
                 options={catalogueNames}
+                styles={{
+                    container:(provided)=>({
+                        ...provided,
+                        width:getWidth(),
+                    })
+                }}
             />
-            </div>
             <div className='catalogue'>
             {(
                 catalogue.map(car => (

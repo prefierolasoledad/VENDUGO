@@ -12,16 +12,16 @@
 }
 
 .catalogue{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3%;
     margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px; 
     width: 90%;
 }
 
 .car-catalogue{
     height:400px;
-    width: 22.57%;
+    width: 100%;
     background-color: white;
     border: 2px solid black;
     border-radius: 20px;
@@ -195,4 +195,58 @@
 #rating{
     text-shadow: 5px 5px 5px rgb(0, 0, 0);
     font-size: 18px;
+}
+
+@media (max-width:1250px) {
+    .car-catalogue{
+        height: 370px;
+    }
+    .car-catalogue h2{
+        margin-top: 1px;
+    }
+    .exploreButtonforCatalogue{
+        margin-top: -5px;
+    }
+    @media (max-width:1025px) {
+        .car-catalogue{
+            height: 300px;
+        }
+        .car-catalogue h2{
+            font-size: 15px;
+        }
+        .exploreButtonforCatalogue{
+            font-size: 12px;
+        }
+        @media (max-width:770px) {
+            .catalogue{
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (max-width:610px) {
+            .car-catalogue{
+                height: 250px;
+            }
+            .car-catalogue h2{
+                font-size: 12px;
+            }
+            .exploreButtonforCatalogue{
+                font-size: 11px;
+                padding: 6px;
+                border-radius: 5px;
+            }
+            @media (max-width:500px) {
+                .catalogue{
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                .car-catalogue{
+                    border-radius: 10px;
+                    height: 230px;
+                }
+                .imageSectionofCar{
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 6px;
+                }
+            }
+        }
+    }
 }
