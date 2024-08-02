@@ -89,7 +89,7 @@ footer p{
     }
     @media (max-width:769px) {
         .footer-page{
-            height: 133vh;
+            height: 97vh;
         }
         .follow-us-section{
             padding-left: 70px;
@@ -100,7 +100,7 @@ footer p{
             gap:0px
         }
         .horizontal-line-footer-section{
-            margin-top: 400px;
+            margin-top: 250px;
         }
         footer{
             margin-top: 5px;

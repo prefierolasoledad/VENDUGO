@@ -17,17 +17,19 @@ const Catalogue=()=>{
     const [showPopUpForRentingCar,setShowPopUpForRentingCar]=useState(false);
     const [selectedCarName,setSelectedCarName]=useState('');
     const [selectedCarImage,setSelectedCarImage]=useState('');
+    const [selectedCarRating,setSelectedCarRating]=useState('');
+    const [selectedCarRentingPrice,setSelectedCarRentingPrice]=useState('');
     const [width, setWidth]=useState(window.innerWidth);
 
     const catalogue=[
-        {id:"HondaAccord", imageUrl:HondaAccord, name:"Honda Accord"},
-        {id:'HondaCivic', imageUrl:HondaCivic,name:"Honda Civic"},
-        {id:'HyundaiKona', imageUrl:HyundaiKona, name:"Hyundai Kona"},
-        {id:"HyundaiSonata", imageUrl:HyundaiSonata, name:"Hyundai Sonata"},
-        {id:"KiaK5", imageUrl:KiaK5, name:"Kia K5"},
-        {id:"KiaSeltos", imageUrl:KiaSeltos, name:"Kia Seltos"},
-        {id:"Mazda3", imageUrl:Mazda3, name:"Mazda 3"},
-        {id:"Mazda6", imageUrl:Mazda6, name:"Mazda 6"}
+        {id:"HondaAccord", imageUrl:HondaAccord, name:"Honda Accord", rating:'4.5', price:'94$/Day'},
+        {id:'HondaCivic', imageUrl:HondaCivic,name:"Honda Civic", rating:'4.7', price:'105$/Day'},
+        {id:'HyundaiKona', imageUrl:HyundaiKona, name:"Hyundai Kona", rating:'4.2', price:'89$/Day'},
+        {id:"HyundaiSonata", imageUrl:HyundaiSonata, name:"Hyundai Sonata", rating:'4.9', price:'120$/Day'},
+        {id:"KiaK5", imageUrl:KiaK5, name:"Kia K5", rating:'5.0', price:'160$/Day'},
+        {id:"KiaSeltos", imageUrl:KiaSeltos, name:"Kia Seltos", rating:'4.6', price:'99$/Day'},
+        {id:"Mazda3", imageUrl:Mazda3, name:"Mazda 3", rating:'4.3', price:'92$/Day'},
+        {id:"Mazda6", imageUrl:Mazda6, name:"Mazda 6", rating:'4.9', price:'119$/Day'}
     ]
     const catalogueNames=[
         {value:"HondaAccord", label:"Honda Accord"},
@@ -46,9 +48,11 @@ const Catalogue=()=>{
         setSelectedCar(selectedOption);
     }
 
-    const togglePopUpForRentingCar=(name, image)=>{
+    const togglePopUpForRentingCar=(name, image,rating,price)=>{
         setSelectedCarImage(image);
         setSelectedCarName(name);
+        setSelectedCarRating(rating);
+        setSelectedCarRentingPrice(price);
         setShowPopUpForRentingCar(!showPopUpForRentingCar);
     }
 
@@ -93,7 +97,7 @@ const Catalogue=()=>{
                         <img src={car.imageUrl} alt={car.name}/>
                     </div>
                     <h2>{car.name}</h2>
-                    <button onClick={()=>{togglePopUpForRentingCar(car.name,car.imageUrl)}} className='exploreButtonforCatalogue'>Rent Now</button>
+                    <button onClick={()=>{togglePopUpForRentingCar(car.name,car.imageUrl,car.rating,car.price)}} className='exploreButtonforCatalogue'>Rent Now</button>
                     </div>
                 ))
                 )
@@ -107,23 +111,19 @@ const Catalogue=()=>{
             </div>
             {showPopUpForRentingCar &&(
                 <div className="popup-background-box-for-renting-car">
-                    <div style={{backgroundImage:`url(${selectedCarImage})`, backgroundSize:'cover'}} className="pop-up-for-renting-card">
-                        <div className="pop-up-for-renting-car-cover">
-                            <div style={{width:'100%',height:'10%'}}><p onClick={()=>{togglePopUpForRentingCar('')}} className="close-ppup-window">X</p></div>
+                    <div className="pop-up-for-renting-card">
+                        <div style={{backgroundImage:`url(${selectedCarImage})`, backgroundSize:'cover',backgroundPosition:'center'}} className="pop-up-for-renting-car-cover">
+                            <div className="close-pop-up-car-renting"><p onClick={()=>{togglePopUpForRentingCar('')}} className="close-ppup-window">X</p></div>
+                            </div>
                             <div className="content-for-renting">
                                 <aside>
                                     <h1>{selectedCarName}</h1>
-                                    <p  id="benifits-for-car">
-                                        The {selectedCarName} offers excellent performance, comfort, and safety. It features a powerful engine, efficient fuel consumption,
-                                        and a stylish design. Inside, it provides advanced technology and comfort.
-                                    </p>
-                                    <p id="rating">Rating: 4.5 </p>
-                                    <p id="price-for-renting-car">Price: 100$/day</p>
+                                    <p id="rating">{`Rating: ${selectedCarRating}`} </p>
+                                    <p id="price-for-renting-car">{`Price: ${selectedCarRentingPrice}`}</p>
                                     <button className="make-payment-button">MAKE PAYMENT</button>
                                 </aside>
                                 
                             </div>
-                        </div>
                     </div>
                 </div>
             )}

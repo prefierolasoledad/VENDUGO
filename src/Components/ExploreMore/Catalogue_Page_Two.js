@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Select from 'react-select';
 import NissanRogue from '../../CarsCollection/NissanRogue.png';
@@ -16,16 +16,19 @@ const CataloguePageTwo=()=>{
     const [showPopUpForRentingCar,setShowPopUpForRentingCar]=useState(false);
     const [selectedCarName,setSelectedCarName]=useState('');
     const [selectedCarImage,setSelectedCarImage]=useState('');
+    const [selectedCarRating,setSelectedCarRating]=useState('');
+    const [selectedCarRentingPrice,setSelectedCarRentingPrice]=useState('');
+    const [width, setWidth]=useState(window.innerWidth);
 
     const catalogue=[
-        {id:"NissanRogue", imageUrl:NissanRogue, name:"Nissan Rogue"},
-        {id:'SubaruOutback', imageUrl:SubaruOutback,name:"Subaru Outback"},
-        {id:'ToyotaCamry', imageUrl:ToyotaCamry, name:"Toyota Camry"},
-        {id:"ToyotaCoralla", imageUrl:ToyotaCoralla, name:"Toyota Coralla"},
-        {id:"ToyotaHilux", imageUrl:ToyotaHilux, name:"Toyota Hilux"},
-        {id:"ToyotaFortuner", imageUrl:ToyotaFortuner, name:"Toyota Fortuner"},
-        {id:"ToyotaTaisor", imageUrl:ToyotaTaisor, name:"Toyota Taisor"},
-        {id:"ToyotaFortunerLegender", imageUrl:ToyotaFortunerLegender, name:"Toyota Fortuner Legender"}
+        {id:"NissanRogue", imageUrl:NissanRogue, name:"Nissan Rogue",rating:'3.9', price:'85$/Day'},
+        {id:'SubaruOutback', imageUrl:SubaruOutback,name:"Subaru Outback",rating:'4.5', price:'96$/Day'},
+        {id:'ToyotaCamry', imageUrl:ToyotaCamry, name:"Toyota Camry",rating:'4.2', price:'93$/Day'},
+        {id:"ToyotaCoralla", imageUrl:ToyotaCoralla, name:"Toyota Coralla",rating:'4.9', price:'130$/Day'},
+        {id:"ToyotaHilux", imageUrl:ToyotaHilux, name:"Toyota Hilux",rating:'5.0', price:'150$/Day'},
+        {id:"ToyotaFortuner", imageUrl:ToyotaFortuner, name:"Toyota Fortuner",rating:'4.0', price:'90$/Day'},
+        {id:"ToyotaTaisor", imageUrl:ToyotaTaisor, name:"Toyota Taisor",rating:'4.7', price:'144$/Day'},
+        {id:"ToyotaFortunerLegender", imageUrl:ToyotaFortunerLegender, name:"Fortuner Legender",rating:'4.6', price:'100$/Day'}
     ]
     const catalogueNames=[
         {value:"NissanRogue", label:"Nissan Rogue"},
@@ -44,11 +47,26 @@ const CataloguePageTwo=()=>{
         setSelectedCar(selectedOption);
     }
 
-    const togglePopUpForRentingCar=(name, image)=>{
+    const togglePopUpForRentingCar=(name, image,rating,price)=>{
         setSelectedCarImage(image);
         setSelectedCarName(name);
+        setSelectedCarRating(rating);
+        setSelectedCarRentingPrice(price);
         setShowPopUpForRentingCar(!showPopUpForRentingCar);
     }
+
+    useEffect(() => {
+        const handleResize = () => setWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const getWidth = () => {
+        if (width > 1200) return '500px';
+        if (width > 768) return '400px';
+        return '300px';
+    };
+
 
     const navigate=useNavigate();
 
@@ -59,14 +77,18 @@ const CataloguePageTwo=()=>{
     return(
         <section className="catalogue-section">
             <h1>CAR CATALOGUE</h1>
-            <div className='inputCountry' style={{ width: '500px' }}>
             <Select 
                 placeholder="Select Car"
                 value={selectedCar}
                 onChange={handleCarChange}
                 options={catalogueNames}
+                styles={{
+                    container:(provided)=>({
+                        ...provided,
+                        width:getWidth(),
+                    })
+                }}
             />
-            </div>
             <div className='catalogue'>
             {(
                 catalogue.map(car => (
@@ -75,7 +97,7 @@ const CataloguePageTwo=()=>{
                         <img src={car.imageUrl} alt={car.name}/>
                     </div>
                     <h2>{car.name}</h2>
-                    <button onClick={()=>{togglePopUpForRentingCar(car.name,car.imageUrl)}} className='exploreButtonforCatalogue'>Rent Now</button>
+                    <button onClick={()=>{togglePopUpForRentingCar(car.name,car.imageUrl,car.rating,car.price)}} className='exploreButtonforCatalogue'>Rent Now</button>
                     </div>
                 ))
                 )
@@ -89,23 +111,19 @@ const CataloguePageTwo=()=>{
             </div>
             {showPopUpForRentingCar &&(
                 <div className="popup-background-box-for-renting-car">
-                    <div style={{backgroundImage:`url(${selectedCarImage})`, backgroundSize:'cover'}} className="pop-up-for-renting-card">
-                        <div className="pop-up-for-renting-car-cover">
-                            <div style={{width:'100%',height:'10%'}}><p onClick={()=>{togglePopUpForRentingCar('')}} className="close-ppup-window">X</p></div>
+                    <div className="pop-up-for-renting-card">
+                        <div style={{backgroundImage:`url(${selectedCarImage})`, backgroundSize:'cover',backgroundPosition:'center'}} className="pop-up-for-renting-car-cover">
+                            <div className="close-pop-up-car-renting"><p onClick={()=>{togglePopUpForRentingCar('')}} className="close-ppup-window">X</p></div>
+                            </div>
                             <div className="content-for-renting">
                                 <aside>
                                     <h1>{selectedCarName}</h1>
-                                    <p  id="benifits-for-car">
-                                        The {selectedCarName} offers excellent performance, comfort, and safety. It features a powerful engine, efficient fuel consumption,
-                                        and a stylish design. Inside, it provides advanced technology and comfort.
-                                    </p>
-                                    <p id="rating">Rating: 4.5 </p>
-                                    <p id="price-for-renting-car">Price: 100$/day</p>
+                                    <p id="rating">{`Rating: ${selectedCarRating}`} </p>
+                                    <p id="price-for-renting-car">{`Price: ${selectedCarRentingPrice}`}</p>
                                     <button className="make-payment-button">MAKE PAYMENT</button>
                                 </aside>
                                 
                             </div>
-                        </div>
                     </div>
                 </div>
             )}
