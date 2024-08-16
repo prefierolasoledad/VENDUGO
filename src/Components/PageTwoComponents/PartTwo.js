@@ -1,9 +1,9 @@
 import React from "react";
 import './PartTwo.css';
 
-const PartTwo=()=>{
+const PartTwo=({ top })=>{
     return(
-        <section className="part-two">
+        <section className="part-two" >
             <div id="first" className="image-section">
 
             </div>

@@ -1,9 +1,7 @@
 .part-four{
-    position: absolute;
-    z-index: 20;
+    margin-top: 150px;
     width: 100%;
-    height: 130%;
-    top: 665vh;
+    height: 900px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -73,20 +71,6 @@
     cursor: pointer;
 }
 
-
-
-.part-four{
-    position: absolute;
-    z-index: 20;
-    width: 100%;
-    height: 130%;
-    top: 665vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 @media (max-width:1265px) {
     .part-four-left{
         font-size: 20px;
@@ -97,9 +81,9 @@
         width: 535px;
     }
     @media (max-width:1110px) {
-        .part-four{
+        /* .part-four{
             top: 725vh;
-        }
+        } */
         .part-four-left{
             font-size: 17px;
             width: 340px;
@@ -121,13 +105,13 @@
                 width: 390px;
             }
             @media (max-width:781px) {
-                .part-four{
+                /* .part-four{
                     top:585vh;
-                }
+                } */
                 @media (max-width:705px) {
-                    .part-four{
+                    /* .part-four{
                         height: 200%;
-                    }
+                    } */
                     .part-four-one{
                         margin-top: 200px;
                         height: 900px;
@@ -158,20 +142,21 @@
                     }
                     @media (max-width:425px) {
                         .part-four{
-                            top:475vh;
+                            margin-top: -150px;
+                            height: 1200px;
                         }
                         .part-four-left{
-                            margin-left: 30px;
+                            margin-left: 0px;
                             font-size: 16px;
                             width: 300px;
                         }
                         .part-four-right{
-                            margin-top: -110px;
+                            margin-top: -50px;
                             font-size: 12px;
                             width: 300px;
                         }
                         .image-section-part-four{
-                            margin-top: -100px;
+                            margin-top: 0px;
                         }
                     }
                 }

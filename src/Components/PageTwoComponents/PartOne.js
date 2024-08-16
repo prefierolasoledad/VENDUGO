@@ -1,15 +1,19 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import PartTwo from "./PartTwo";
+import PartThree from "./PartThree";
+import PartFour from "./PartFour";
+import Footer from "../footer";
 import './PartOne.css'
 
-const PartOne=()=>{
+const PartOne=React.forwardRef(({ top }, ref) =>{
     const navigate=useNavigate();
 
     const exploreMore=async()=>{
         navigate(`/ExploreMore`);
     }
     return(
-        <section className="part-one">
+        <section ref={ref} className="part-one" style={{ top }}>
             <div className="part-one-one">
                 <aside className="left">
                 <h2>
@@ -57,9 +61,12 @@ const PartOne=()=>{
                     <button onClick={()=>{exploreMore()}}>SEE CATALOGUE</button>
                 </aside>
             </div>
-            
+            <PartTwo/>
+            <PartThree/>
+            <PartFour/>
+            <Footer alterMargin={true}/>
         </section>
     )
-}
+});
 
 export default PartOne;

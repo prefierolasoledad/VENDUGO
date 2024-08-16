@@ -3,7 +3,7 @@ import NavBar from "./HeroSectionComponents/NavBar";
 import BackgroundCover from "./HeroSectionComponents/BackgroundCover";
 import './HeroSection.css';
 
-const HeroSection=()=>{
+const HeroSection = React.forwardRef((props, ref) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const images=[
         "TOYOTA_HILUX",
@@ -20,11 +20,13 @@ const HeroSection=()=>{
     }, [images.length]);
 
     return (
-        <section id={images[currentImageIndex]} className="hero-section">
+        <section ref={ref} id={images[currentImageIndex]} className="hero-section">
             <NavBar/>
             <BackgroundCover name={images[currentImageIndex]}/>
         </section>
     );
-}
+
+});
+
 
 export default HeroSection;
